@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zweb_gstr2_srv.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZWEB_I_MAINVIEWType">
+                <Key>
+                    <PropertyRef Name="Belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="blart" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="vendor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PostingDate" Type="Edm.Date"/>
+                <Property Name="DocumentDate" Type="Edm.Date"/>
+                <Property Name="awkey" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ven_inv" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="TaxCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Quan_Unit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="BusinessPlace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Quantuty" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Hsn_code" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Materila_" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Product_" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="BusinessPlaceName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="GSTIN" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="IGST_amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="CGST_amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="SGST_Amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="TDS_Amt" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="variable"/>
+                <Property Name="amnt" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="variable"/>
+                <Property Name="IGST_RATE" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="SCGST_RATE" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="ZWEB_C_BSEGITEMType">
+                <Key>
+                    <PropertyRef Name="Belnr"/>
+                </Key>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="blart" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="ven_inv" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="dmbtr" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="vendor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Inv_reff" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="PostingDate" Type="Edm.Date"/>
+                <Property Name="DocumentDate" Type="Edm.Date"/>
+                <Property Name="koart" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="TaxCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="BaseUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="awkey" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="ZWEB_C_SGSTType">
+                <Key>
+                    <PropertyRef Name="belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="tax" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="ZWEB_C_CGSTType">
+                <Key>
+                    <PropertyRef Name="belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="tax" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="ZWEB_C_IGSTType">
+                <Key>
+                    <PropertyRef Name="belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="tax" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="ZWeB_CON_PURCHASEType">
+                <Key>
+                    <PropertyRef Name="Belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="blart" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="vendor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PostingDate" Type="Edm.Date"/>
+                <Property Name="DocumentDate" Type="Edm.Date"/>
+                <Property Name="awkey" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ven_inv" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="BusinessPlace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="BusinessPlaceName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="GSTIN" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="IGST_amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="CGST_amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="SGST_Amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="variable"/>
+                <Property Name="TDS_Amt" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="variable"/>
+                <Property Name="amnt" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="variable"/>
+                <Property Name="HSNCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TaxCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Value" Type="Edm.Decimal" Nullable="false" Precision="29" Scale="variable"/>
+                <Property Name="IGSTRate" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="CGSTRate" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="SGSTRate" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CESSRate" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="CESSValue" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ItemType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="SupplyType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="POS" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ReverseCharge" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PortCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="State" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="LineItemCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TotalIGSTValue" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TotalSGSTValue" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="TotalCessValue" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="zMonth" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="IsImplaneded" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PartyUIN" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Address" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="EligibilityOfITC" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="VoucherType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ItemName" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="MismatchFlag" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ItemHead" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PartyUnitCode" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="IsModified" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="InEligibility_US_17_5" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="LeaseOFOldCar" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="IsTaxableZero" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="Quan_Unitval" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Hsncode_1" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Materil_" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="18"/>
+            </EntityType>
+            <EntityType Name="ZWeB_C_TDSType">
+                <Key>
+                    <PropertyRef Name="belnr"/>
+                    <PropertyRef Name="gjahr"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="tds" Type="Edm.Decimal" Nullable="false" Precision="28" Scale="variable"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZWeB_CON_PURCHASE" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWeB_CON_PURCHASEType"/>
+                <EntitySet Name="ZWEB_C_BSEGITEM" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWEB_C_BSEGITEMType"/>
+                <EntitySet Name="ZWEB_C_CGST" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWEB_C_CGSTType"/>
+                <EntitySet Name="ZWEB_C_IGST" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWEB_C_IGSTType"/>
+                <EntitySet Name="ZWEB_C_SGST" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWEB_C_SGSTType"/>
+                <EntitySet Name="ZWeB_C_TDS" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWeB_C_TDSType"/>
+                <EntitySet Name="ZWEB_I_MAINVIEW" EntityType="com.sap.gateway.srvd.zweb_gstr2_srv.v0001.ZWEB_I_MAINVIEWType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/blart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/vendor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Supplier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/ven_inv">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Reference ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/TaxCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Tax on Sales/Purchases Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Material">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Quan_Unit">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Quantity">
+                <Annotation Term="SAP__measures.Unit" Path="Quan_Unit"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/BusinessPlace">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Business Place"/>
+                <Annotation Term="SAP__common.Heading" String="BusP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Quantuty">
+                <Annotation Term="SAP__measures.Unit" Path="Quan_Unit"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Hsn_code">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="HSN/SAC Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HSN or SAC Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Materila_">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/Product_">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Product Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/GSTIN">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Number 3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/IGST_amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/CGST_amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/SGST_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/TDS_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/amnt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType">
+                <Annotation Term="SAP__common.Label" String="Purchase Data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWEB_I_MAINVIEW">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Quantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Quantuty"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IGST_amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CGST_amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SGST_Amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TDS_Amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="amnt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/Belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/blart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/ven_inv">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Reference ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/dmbtr">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Amount in Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/vendor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Supplier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/koart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Account Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/Material">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/TaxCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Tax on Sales/Purchases Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/BaseUnit">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/Quantity">
+                <Annotation Term="SAP__measures.Unit" Path="BaseUnit"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType">
+                <Annotation Term="SAP__common.Label" String="line item data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWEB_C_BSEGITEM">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="dmbtr"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Quantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType/belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-zweb_gstr2_srv-0001';va='com.sap.gateway.srvd.zweb_gstr2_srv.v0001.et-zweb_c_sgst.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType/tax">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_SGSTType">
+                <Annotation Term="SAP__common.Label" String="SGST TAX"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="tax" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWEB_C_SGST">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="tax"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType/belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-zweb_gstr2_srv-0001';va='com.sap.gateway.srvd.zweb_gstr2_srv.v0001.et-zweb_c_cgst.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType/tax">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_CGSTType">
+                <Annotation Term="SAP__common.Label" String="CGST TAX"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="tax" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWEB_C_CGST">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="tax"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType/belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-zweb_gstr2_srv-0001';va='com.sap.gateway.srvd.zweb_gstr2_srv.v0001.et-zweb_c_igst.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType/tax">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_IGSTType">
+                <Annotation Term="SAP__common.Label" String="IGST TAX"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="tax" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWEB_C_IGST">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="tax"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Belnr">
+                <Annotation Term="SAP__common.Label" String="Document NO"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Journal Entry"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/gjahr">
+                <Annotation Term="SAP__common.Label" String="Yaer"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Fiscal Year"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/CompanyCode">
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Company Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/blart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/vendor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Supplier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/ven_inv">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Reference ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/BusinessPlace">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Business Place"/>
+                <Annotation Term="SAP__common.Heading" String="BusP"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/GSTIN">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Number 3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/IGST_amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/CGST_amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/SGST_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/TDS_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/amnt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/TaxCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Tax on Sales/Purchases Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Value">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/MismatchFlag">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/InEligibility_US_17_5">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Quan_Unitval">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Hsncode_1">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="HSN/SAC Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HSN or SAC Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Materil_">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/Product">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Product Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType">
+                <Annotation Term="SAP__common.Label" String="Purchase Data"/>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Webtel Purchase Report"/>
+                        <PropertyValue Property="TypeNamePlural" String="Webtel Purchase Report"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Belnr"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="gjahr"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="blart"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="vendor"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PostingDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DocumentDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="awkey"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ven_inv"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BusinessPlace"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BusinessPlaceName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplierName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GSTIN"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Region"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCodeCurrency"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IGST_amt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CGST_amt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SGST_Amt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TDS_Amt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="amnt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="HSNCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IGSTRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TaxCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CGSTRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SGSTRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CESSRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CESSValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplyType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="POS"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PortCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ReverseCharge"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="State"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LineItemCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalIGSTValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalSGSTValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalCessValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="zMonth"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IsImplaneded"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PartyUIN"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Address"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="EligibilityOfITC"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="VoucherType"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MismatchFlag"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemHead"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PartyUnitCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IsModified"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="InEligibility_US_17_5"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LeaseOFOldCar"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IsTaxableZero"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Value"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Quan_Unitval"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Hsncode_1"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Materil_"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Product"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Belnr</PropertyPath>
+                        <PropertyPath>gjahr</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWeB_CON_PURCHASE">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IGST_amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CGST_amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SGST_Amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TDS_Amt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="amnt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Value"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType/belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType/gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-zweb_gstr2_srv-0001';va='com.sap.gateway.srvd.zweb_gstr2_srv.v0001.et-zweb_c_tds.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType/CompanyCodeCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType/tds">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CompanyCodeCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_C_TDSType">
+                <Annotation Term="SAP__common.Label" String="Tds data"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="tds" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZWeB_C_TDS">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="tds"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/PostingDate">
+                <Annotation Term="SAP__common.Label" String="Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/DocumentDate">
+                <Annotation Term="SAP__common.Label" String="Journal Entry Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/BusinessPlaceName">
+                <Annotation Term="SAP__common.Label" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_I_MAINVIEWType/SupplierName">
+                <Annotation Term="SAP__common.Label" String="Name of Supplier"/>
+                <Annotation Term="SAP__common.Heading" String="Supplier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/Inv_reff">
+                <Annotation Term="SAP__common.Label" String="Item Text"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/PostingDate">
+                <Annotation Term="SAP__common.Label" String="Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWEB_C_BSEGITEMType/DocumentDate">
+                <Annotation Term="SAP__common.Label" String="Journal Entry Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/PostingDate">
+                <Annotation Term="SAP__common.Label" String="Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/DocumentDate">
+                <Annotation Term="SAP__common.Label" String="Journal Entry Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/BusinessPlaceName">
+                <Annotation Term="SAP__common.Label" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZWeB_CON_PURCHASEType/SupplierName">
+                <Annotation Term="SAP__common.Label" String="Name of Supplier"/>
+                <Annotation Term="SAP__common.Heading" String="Supplier"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
